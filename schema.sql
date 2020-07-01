@@ -12,7 +12,9 @@ CREATE TABLE product(
   subTitle VARCHAR(255) NULL,
   description VARCHAR(255) NULL,
   specialty VARCHAR(255) NULL,
-  price INT NULL
+  price INT NULL,
+  ingredients VARCHAR(1000) NULL,
+  howTo VARCHAR(255) NULL
 );
 
 DROP TABLE IF EXISTS details;

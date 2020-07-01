@@ -16,8 +16,10 @@
 1. [Development](#development)
 
 ## Usage
-
-> Some usage instructions
+  npm install
+> npm run seed
+  npm start
+  http://localhost:3000
 
 ## Requirements
 

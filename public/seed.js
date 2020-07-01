@@ -107,16 +107,51 @@ var arrayOfImgs = [
 var arrayOfTitles = ['Lipstick', 'Lip Gloss', 'Eye Lashes', 'Lotion', 'Nail Polish', 'Concealer', 'Eyeliner', 'Brushes', 'Blender', 'Lash Stick'];
 
 var arrayOfSub = [
-  'sheer matte lipstick • 0.1 oz / 3 g',
-  'cushiony glassy shine • Clear: 0.14 fl oz / 4.2 ml, Red + Holographic: 0.12 fl oz / 3.5 ml • ',
+  'Sheer matte lipstick • 0.1 oz / 3 g',
+  'Cushiony glassy shine • Clear: 0.14 fl oz / 4.2 ml, Red + Holographic: 0.12 fl oz / 3.5 ml • ',
   'Mellow Fibers: For lash follicles.',
-  'buildable hydrating creme • 1.7 fl oz / 50 ml • ',
+  'Buildable hydrating creme • 1.7 fl oz / 50 ml • ',
   'Nail Polish • 3 g',
-  'undetectable, flexible coverage• 0.17 oz / 4.8 g •',
-  'brush point liquid eyeliner• 0.47 ml / 0.01 fl oz •',
-  'bristles that tickle',
-  'comfortable soft blender',
-  'film form mascara• 8.5 g / 0.29 oz •'
+  'Undetectable, flexible coverage• 0.17 oz / 4.8 g •',
+  'Brush point liquid eyeliner• 0.47 ml / 0.01 fl oz •',
+  'Bristles that tickle',
+  'Comfortable soft blender',
+  'Film form mascara• 8.5 g / 0.29 oz •'
+];
+
+var arrayOfIngredients = [
+  'Wax Matrix: A combination of sunflower and synthetic beeswax that creates a smooth, cushiony texture and feel on lips and protects against bullet breakage. \n\nBlue Agave: Binds water inside lips for comfortable wear. \n\nSafflower Oil: High in linoleic acid, it creates a barrier to prevent moisture loss in lips. \n\nLychee Rose Scent Subtle and fresh.',
+
+  'Gloss-Lock: Technology A mixture of emollients that bind to your lips, so the shine stays put. \n\nConditioning Jojoba oil: Helps the gloss smooth on and spread out evenly—no goopy feeling! \n\nVitamin E Acetate Leaves lips feeling moisturized and cushiony soft.',
+
+  'These lashes are made from actual human hair. They have a clear band and are more comfortable than synthetic lashes. They are also slightly thinner than mink lashes. \n\nThese are a popular alternative to synthetic lashes because they are cheap and widely available. You can purchase a pair of natural human hair lashes here to go along with your lash binder!',
+
+  'Hyaluronic Acid: Gives that cushiony effect through mega hydration. \n\nMushroom Super Hydrator A powerful plant extract that provides deep moisture. \n\nAnti-Redness Complex A soothing mix of tea and honey extracts that quickly and visibly reduces the appearance of redness. \n\nAntioxidant Blend Vitamins A, C, E and radish root.',
+
+  'Glycofilm Pollustop: Key ingredient that helps form a physical film (or matrix) against skin-stressors. \n\nBotanical Blend: Antioxidant-rich extracts of Rosemary Leaf, Echinacea, Sunflower, and Rice Bran soothe and soften. \n\nFermented Coconut Fruit Extract: Optimized with nutrients for thirsty skin, fermented for better absorption. \n\nMeadowfoam Seed Oil: Rich in fatty acids to help lock in moisture.',
+
+  'Beeswax & Microcrystalline Wax: Give concealer a super elastic consistency which allows it to move with your expressions, not stiffen and cake. \n\nAvocado & Jojoba Oil Nourish skin, prevent water loss, and give a natural dewy finish. \n\nCocoa Butter A natural fat full of the good stuff that promotes skin suppleness. \n\nAdaptable Mineral Pigments Merge seamlessly with a wide range of skin tones for natural-looking coverage.',
+
+  '',
+
+  'These brushes are made from actual human hair. They have a clear band and are more comfortable than synthetic lashes. They are also slightly thinner than mink lashes. \n\nThese are a popular alternative to synthetic lashes because they are cheap and widely available. You can purchase a pair of natural human hair lashes here to go along with your lash binder!',
+
+  'Foam',
+
+  'Japanese Fiber Technology: One and two millimeter-long curved fibers hook onto lashes, adding length. Consider these your lash “extensions.” \n\nVegan Biotin: Conditions and strengthens for healthier, softer lashes over time. \n\nNatural Shine Polymers: Enhances the formula’s black pigments so lashes are extra shiny and sleek. \n\nTapered Comb Brush: The tiered bristles and precise tip separate top and bottom lashes at the root, ensuring even application.'
+];
+
+var arrayOfUse = [
+  'For a subtle wash of color, swipe Generation G onto naked lips once or twice.',
+  'Sweep the Lip Gloss wand directly onto your lips for a cushiony, glassy shine.',
+  'Glue it to your eyes dude.',
+  'Pull a dab out of the bottle and rub it all over those hands',
+  'Apply on nails',
+  'Warm up Stretch Concealer by gently swirling fingertips over the surface layer of the opened pot, picking up a thin layer of product as you go',
+  'To start, shake. Remove the cap, and glide tip along lash line, hugging as close to lashes as possible.',
+  'Use the brush to BrushBrushBrush.',
+  'Use the blender to BlendBlendBlend',
+  'Comb the Lash Slick wand through the lashes from roots to tips.'
 ];
 
 var arrayOfDescriptions = [
@@ -187,20 +222,21 @@ var arrayOfShades = [
 var createData = function () {
   var object = [];
   var object2 = [];
+  var array = arrayOfTitles;
+  var newTitleArray = [];
+  var array2 = arrayOfDescriptions;
+  var newDescriptions = [];
+  var array3 = arrayOfSpecials;
+  var newSpecial = [];
+  var array4 = arrayOfSub;
+  var newSub = [];
+  var array5 = arrayOfIngredients;
+  var newIngredients = [];
+  var array6 = arrayOfUse;
+  var newUse = [];
   var num = 0;
   var titleNum = 0;
 
-  var array = arrayOfTitles;
-  var newTitleArray = [];
-
-  var array2 = arrayOfDescriptions;
-  var newDescriptions = [];
-
-  var array3 = arrayOfSpecials;
-  var newSpecial = [];
-
-  var array4 = arrayOfSub;
-  var newSub = [];
 
   for(var i = 0; i < array.length; i++) {
     for(var j = 0; j < 10; j++) {
@@ -208,13 +244,15 @@ var createData = function () {
       newDescriptions.push(array2[i]);
       newSpecial.push(array3[i]);
       newSub.push(array4[i]);
+      newIngredients.push(array5[i]);
+      newUse.push(array6[i]);
     }
   }
 
   while(num < 10) {
 
     for(var i = 0; i < 10; i++) {
-      object.push({title: newTitleArray[titleNum + i], subTitle: newSub[titleNum + i], description: newDescriptions[titleNum + i], specialty: newSpecial[titleNum + i], price: arrayOfPrices[i]});
+      object.push({title: newTitleArray[titleNum + i], subTitle: newSub[titleNum + i], description: newDescriptions[titleNum + i], specialty: newSpecial[titleNum + i], price: arrayOfPrices[i], ingredients: newIngredients[titleNum + i], howTo: newUse[titleNum + i]});
     }
 
     for(var i = 0; i < 10; i++) {
@@ -225,10 +263,10 @@ var createData = function () {
     num++
   }
 
-
   object.map(object => {
-    db.query(`INSERT INTO product (title, subTitle, description, specialty, price) VALUES ("${object.title}", "${object.subTitle}", "${object.description}", "${object.specialty}", ${object.price});`, (err, result) => {
+    db.query(`INSERT INTO product (title, subTitle, description, specialty, price, ingredients, howTo) VALUES ("${object.title}", "${object.subTitle}", "${object.description}", "${object.specialty}", ${object.price}, "${object.ingredients}", "${object.howTo}");`, (err, result) => {
       if (err) {
+        console.log(err);
         console.log("Couldn't seed table");
       } else {
         console.log('Table seeded');

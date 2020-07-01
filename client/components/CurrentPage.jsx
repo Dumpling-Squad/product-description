@@ -2,6 +2,8 @@ import React from 'react';
 import DetailPage from './DetailPage.jsx';
 import Good from './Good.jsx';
 import Related from './Related.jsx';
+import Related2 from './Related2.jsx';
+import Conditional from './Conditional.jsx';
 import axios from 'axios';
 
 class CurrentPage extends React.Component {
@@ -10,6 +12,7 @@ class CurrentPage extends React.Component {
     this.state = {
       image: '',
       amount: 1,
+      ingredient: '',
       shades: [],
       related: [],
       relatedPics: [],
@@ -63,6 +66,7 @@ class CurrentPage extends React.Component {
             });
         }
         this.setState ({
+          relatedPics: relatedArray,
           relatedPics2: relatedArray2
         })
 
@@ -179,9 +183,10 @@ class CurrentPage extends React.Component {
           </div>
           <h2 id='saveSets'>Save with sets</h2>
           <div id='relatedContainer2'>
-            <Related pics={this.state.relatedPics2}/>
+            <Related2 pics={this.state.relatedPics2} title={this.props.details.subTitle} price={this.props.details.price}/>
           </div>
         </div>
+        <Conditional ingredients={this.props.details.ingredients} howTo={this.props.details.howTo}/>
       </div>
     );
   }
