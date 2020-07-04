@@ -17,7 +17,8 @@ class CurrentPage extends React.Component {
       related: [],
       relatedPics: [],
       relatedPics2: [],
-      goodArray: []
+      goodArray: [],
+      relatedPage: true
     }
     this.setImage = this.setImage.bind(this);
     this.getShades = this.getShades.bind(this);
@@ -67,7 +68,8 @@ class CurrentPage extends React.Component {
         }
         this.setState ({
           relatedPics: relatedArray,
-          relatedPics2: relatedArray2
+          relatedPics2: relatedArray2,
+          relatedPage: false
         })
 
       });
@@ -140,13 +142,23 @@ class CurrentPage extends React.Component {
   }
 
   render() {
+    if(this.state.relatedPage === true) {
+      return (
+        <div id = 'ProductPage'>
+          <img src='https://static.impression.co.uk/2014/05/loading1.gif'></img>
+        </div>
+      );
+    }
+
     return (
       // <img src={this.setImage}></img>
       <div>
-        <div id='relatedContainer'>
-          <Related pics={this.state.relatedPics} change={(e) => this.changePic(e)}/>
+        <div id = 'pics'>
+          <div id='relatedContainer'>
+            <Related pics={this.state.relatedPics} change={(e) => this.changePic(e)}/>
+          </div>
+          <img id='currentImage' src={this.state.image}></img>
         </div>
-        <img id='currentImage' src={this.state.image}></img>
         <div id='details'>
           <h2 id='currentTitle'>{this.props.details.title}</h2>
           <h2 id='currentSubtitle'>{this.props.details.subTitle}</h2>

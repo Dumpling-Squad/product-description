@@ -43,7 +43,6 @@
 
 #relatedContainer {
   width: 40px;
-  position: fixed;
   margin-top: 0px;
   margin-left: 440px;
 }
@@ -205,8 +204,11 @@
 #currentImage {
   height: 553px;
   width: 435px;
-  position: fixed;
-  margin-left: 496px;
+  margin-left: 0px;
+}
+
+#pics {
+  display: flex;
 }
 
 #details {
@@ -220,7 +222,8 @@
 #currentTitle {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
   font-size: 30px;
-  margin-top: 710px;
+  margin-top: 13px;
+  margin-bottom: 10px;
 }
 
 #currentSubtitle {

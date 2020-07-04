@@ -26,24 +26,29 @@ class App extends React.Component {
       .then(result => {
         this.setState ({
           images: result.data,
-        }, )
+        })
       })
       .then(
         axios.get('/product')
           .then(result => {
             this.setState ({
               details: result.data,
-            },)
+            })
           })
           .then(
             axios.get('/details')
               .then(result => {
                 this.setState ({
-                  additional: result.data,
+                  additional: result.data
+                })
+              })
+              .then(result => {
+                this.setState ({
                   productPage: false,
                   currentPage: true
                 })
-              })
+              }
+              )
           )
       )
   }
