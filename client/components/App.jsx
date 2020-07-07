@@ -1,7 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import ProductPage from './ProductPage.jsx';
 import CurrentPage from './CurrentPage.jsx';
-import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,64 +10,73 @@ class App extends React.Component {
       images: [],
       details: [],
       additional: [],
-      id: Math.floor(Math.random() * 100),
+      productId: Math.floor(Math.random()*100), // CHANGE THIS TO 0 WHEN USING WITH PROXY
       productPage: true,
-      currentPage: false
-    }
+      currentPage: false,
+    };
     this.getImages = this.getImages.bind(this);
+    // this.getProductId = this.getProductId.bind(this); COMMENT THIS IN ONCE USING WITH PROXY
   }
 
   componentDidMount() {
-    this.getImages();
+    this.getImages(); //change this.getImages() to this.getProductId() when using with PROXY
   }
 
   getImages() {
     axios.get('/images')
-      .then(result => {
-        this.setState ({
+      .then((result) => {
+        this.setState({
           images: result.data,
-        })
+        });
       })
       .then(
         axios.get('/product')
-          .then(result => {
-            this.setState ({
+          .then((result) => {
+            this.setState({
               details: result.data,
-            })
+            });
           })
           .then(
             axios.get('/details')
-              .then(result => {
-                this.setState ({
-                  additional: result.data
-                })
-              })
-              .then(result => {
-                this.setState ({
+              .then((result) => {
+                this.setState({
+                  additional: result.data,
                   productPage: false,
-                  currentPage: true
-                })
-              }
-              )
-          )
-      )
+                  currentPage: true,
+                });
+              }),
+          ),
+      );
   }
 
+  //COMMENT THIS IN FOR PROXY USE
+
+  // getProductId() {
+  //   axios
+  //     .get('/productId')
+  //     .then((data) => {
+  //       this.setState({
+  //         productId: data.data.productId,
+  //       });
+  //     })
+  //     .then(() => {
+  //       this.getImages();
+  //     });
+  // }
+
   render() {
-    if(this.state.productPage === true) {
+    if (this.state.productPage === true) {
       return (
-        <div id = 'ProductPage'>
-          <img src='https://static.impression.co.uk/2014/05/loading1.gif'></img>
+        <div id="ProductPage">
+          <img src="https://static.impression.co.uk/2014/05/loading1.gif" />
         </div>
       );
     }
 
-    if(this.state.currentPage === true) {
+    if (this.state.currentPage === true) {
       return (
         <div>
-          <div></div>
-          {/* <header id='head'><img src='https://mock-website-shades.s3-us-west-1.amazonaws.com/bar.jpg'></img></header> */}
-          <CurrentPage id={this.state.id} details={this.state.details[this.state.id - 1]} add={this.state.additional[this.state.id - 1]} shades={this.state.additional}/>
+          <CurrentPage productId={this.state.productId} details={this.state.details[this.state.productId - 1]} add={this.state.additional[this.state.productId - 1]} shades={this.state.additional} />
         </div>
       );
     }

@@ -42,29 +42,35 @@
 }
 
 #relatedContainer {
-  width: 40px;
-  margin-top: 0px;
-  margin-left: 440px;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 54px;
+  width: 45px;
 }
 
 #relatedContainer2 {
   /* width: 120px; */
   margin-top: -5px;
-  display: flex;
+  /* display: flex; */
 }
 
 #containerAdd {
   background-color: rgb(250, 250, 250);
-  margin-top: 10px;
-  height: 160px;
-  width: 450px;
+  display: flex;
+  margin-top: 12px;
+}
+
+#containerAdd div {
+  padding: 24px 16px;
+  width: 100%;
+  text-align: left;
 }
 
 #containerTitle {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 15px;
-  margin-left: 135px;
-  margin-top: -120px;
+  font-size: 14px;
+  margin-bottom: 8px;
   font-display: flex;
 }
 
@@ -78,9 +84,8 @@
   font-weight: bold;
   border: 1px solid lightgray;
   height: 50px;
-  width: 200px;
+  min-width: 200px;
   background-color: white;
-  margin-left: 150px;
 }
 
 #addToBag:hover {
@@ -89,20 +94,23 @@
 
 #icons {
   display: flex;
-  padding: 30px;
+  width: 33%;
 }
 
-#icon {
+#product-description #icon {
+  margin: 0;
   height: 25px;
   width: 25px;
+  cursor: default;
 }
 
 #iconContainer {
-  margin-left: -40px;
-  margin-top: -40px;
+  /* margin-left: -40px;
+  margin-top: -40px; */
   /* height: 20px;
   width: 20px; */
   display: flex;
+  flex-wrap: wrap;
 }
 
 #goodToKnow {
@@ -122,9 +130,8 @@
 #saveSets {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
   text-align: center;
-  font-size: 20px;
-  margin-top: 25px;
-  margin-left: 24px;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 #shades:hover {
@@ -174,9 +181,13 @@
 
 #tested {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  margin-top: 15px;
-  font-size: 13px;
-  font-weight: 10;
+  font-weight: 400;
+  white-space: normal;
+  text-align: left;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(85, 85, 85);
+  margin: 8px 0px 0px;
 }
 
 #free {
@@ -202,46 +213,45 @@
 }
 
 #currentImage {
-  height: 553px;
-  width: 435px;
-  margin-left: 0px;
-}
-
-#pics {
-  display: flex;
+  width: calc(100% - 92px);
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+  margin-left: 92px;
+  min-height: 480px;
 }
 
 #details {
   width: 500px;
-  margin-left: 958px;
-  margin-top: -582px;
+  /* margin-left: 958px; */
+  /* margin-top: -582px; */
   /* line-height: 32px;
   margin: 0px 0px 4px; */
 }
 
 #currentTitle {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 30px;
-  margin-top: 13px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0px 0px 4px;
 }
 
 #currentSubtitle {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
   font-size: 15px;
   font-weight: 50;
-  margin-top: -22px;
 }
 
 #currentSub {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  margin-top: 20px;
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  font-style: normal;
+  text-align: left;
 }
 
 #currentWhat {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  margin-top: 3px;
   font-size: 13px;
 }
 
@@ -253,21 +263,31 @@
   font-size: 13px;
   font-weight: 50;
   margin-left: 5px;
-  margin-top: 0px;
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
 }
 
 #currentSpecial {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  margin-top: 38px;
-  font-size: 13px;
+  margin: 20px 0 8px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
   list-style-position: inside;
+  text-align: left;
 }
 
 #currentKnow {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  margin-top: 65px;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  text-align: left;
 }
 
 #extraKnow {
@@ -288,7 +308,6 @@
 
 #purchaseLine {
   display: flex;
-  width: 1000px;
 }
 
 #purchaseText {
@@ -297,125 +316,95 @@
 }
 
 #bullet {
-  list-style-type: disc;
-  list-style-position: inside;
-  text-indent: -1.5em;
-  padding-left: 1em;
+  text-align: left;
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
   font-size: 15px;
-  margin-top: 20px;
+  margin-bottom: 2px;
 }
 
-#ProductPage {
-  /* display: flex;
-  margin: 10%;
-  flex-wrap: wrap; */
-  /* position: absolute; */
- margin-left: 600px;
- margin-top: 200px;
+.accordionContainer-open {
+  background-color: rgb(250, 250, 250);
+  transition: ease-in-out all 0.2s;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
-#ingredientsContainer {
+.accordionHeading h3 {
+  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.accordionContainer {
   height: 90px;
-  width: 530px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
   background-color: rgb(250, 250, 250);
-  margin-top: 20px;
-  margin-left: 960px;
   transition: ease-in-out all 0.2s;
-  /* overflow:hidden; */
+  padding: 32px;
 }
 
-#ingredientsContainer2 {
-  height: 350px;
-  width: 530px;
-  background-color: rgb(250, 250, 250);
-  margin-top: 20px;
-  margin-left: 960px;
-  transition: ease-in-out all 0.2s;
-  /* overflow:hidden; */
+.accordionContainer div {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-#ingredients {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 15px;
-  margin-top: -55px;
-  margin-left: 980px;
-}
-
-#ingredients2 {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 15px;
-  margin-top: -320px;
-  margin-left: 980px;
-  margin-bottom: 250px;
-}
-
-#ingredientsButton {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 25px;
-  width: 25px;
-  height: 25px;
-  margin-top: 30px;
-  margin-left: 480px;
+.accordionButton {
   border: none;
-  background-color: transparent;
   outline: none;
   box-shadow: none;
+  top: -2px;
+  position: relative;
+  font-size: 30px;
+  line-height: 22px;
+  font-weight: 400;
+  align-self: flex-start;
+  padding: 0px;
+  background: transparent;
+  cursor: pointer;
 }
 
-#ingredientContent {
+.accordionContainer h3 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.accordionContent {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 15px;
-  font-weight: 50;
-  white-space: pre-wrap;
+  font-weight: 400;
+  white-space: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  width: 100%;
 }
 
-#ingredientWidth {
-  width: 400px;
-  margin-left: 65px;
-}
-
-#howToUseContainer {
-  height: 90px;
-  width: 530px;
-  background-color: rgb(250, 250, 250);
-  margin-top: 60px;
-  margin-left: 960px;
+.accordionHeading {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 #howToUseContainer2 {
   height: 150px;
-  width: 530px;
+  /* width: 530px; */
   background-color: rgb(250, 250, 250);
   margin-top: 60px;
-  margin-left: 960px;
-}
-
-#howToUse {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 15px;
-  margin-top: -55px;
-  margin-left: 980px;
+  /* margin-left: 960px; */
 }
 
 #howToUse2 {
   font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
   font-size: 15px;
-  margin-top: -110px;
-  margin-left: 980px;
-}
-
-#howToButton {
-  font-family: "Apercu Pro", -apple-system, BlinkMacSystemFont, Helvetica;
-  font-size: 25px;
-  width: 25px;
-  height: 25px;
-  margin-top: 30px;
-  margin-left: 480px;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  box-shadow: none;
+  /* margin-top: -110px;
+  margin-left: 980px; */
 }
 
 #howToWidth {
@@ -432,4 +421,8 @@
 
 body {
   position: absolute;
+}
+
+.SetsContainer {
+  margin: 16px 0;
 }
